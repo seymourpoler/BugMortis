@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{09D23250-B597-4DFD-8E14-4655974DB6D0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BugMortis.Domain</RootNamespace>
+    <AssemblyName>BugMortis.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contracts\IDataMasterService.cs" />
+    <Compile Include="Contracts\IService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BugService.cs" />
+    <Compile Include="Services\CompanyService.cs" />
+    <Compile Include="Services\PriorityService.cs" />
+    <Compile Include="Services\ProjectService.cs" />
+    <Compile Include="Services\StatusService.cs" />
+    <Compile Include="Services\UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BugMortis.Data.Entity\BugMortis.Data.Entity.csproj">
+      <Project>{66125473-04d0-44f4-874b-c01e1feb9348}</Project>
+      <Name>BugMortis.Data.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BugMortis.Data.SqlServer\BugMortis.Data.SqlServer.csproj">
+      <Project>{7acdd05f-b677-4f12-9539-a5c8e628cfc2}</Project>
+      <Name>BugMortis.Data.SqlServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BugMortis.Data\BugMortis.Data.csproj">
+      <Project>{231bf915-5f8a-43f6-8f3f-82fe7ab2e73e}</Project>
+      <Name>BugMortis.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BugMortis.Domain.Entity\BugMortis.Domain.Entity.csproj">
+      <Project>{a60c2b67-fcb3-4b64-b8a0-54c20a0397fd}</Project>
+      <Name>BugMortis.Domain.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
